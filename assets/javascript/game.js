@@ -14,6 +14,23 @@ function ranNum() {
 }
 ranNum();
 
+function game () {
+    if (score === random) {
+        wins++;
+        score = 0;
+        ranNum();
+        crystals();
+        alert("Congraulations");
+
+    }
+    else if (score > random) {
+        losses++;
+        score = 0;
+        ranNum();
+        crystals();
+        alert("Boo! Try again");
+    }
+}
 function crystals() {
     blue = Math.floor((Math.random() * 10) + 1);
     green = Math.floor((Math.random() * 10) + 1);
@@ -29,21 +46,7 @@ crystals();
 $(document).ready(function () {
     $("#blue").click(function () {
         score = blue + score;
-        if (score === random) {
-            wins++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Congraulations");
-
-        }
-        else if (score > random) {
-            losses++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Boo! Try again");
-        }
+        game();
         console.log(score)
     });
 })
@@ -51,21 +54,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#green").click(function () {
         score = green + score;
-        if (score === random) {
-            wins++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Congraulations");
-
-        }
-        else if (score > random) {
-            losses++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Boo! Try again");
-        }
+        game();
         console.log(score)
     });
 })
@@ -73,21 +62,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#purple").click(function () {
         score = purple + score;
-        if (score === random) {
-            wins++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Congraulations");
-
-        }
-        else if (score > random) {
-            losses++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Boo! Try again");
-        }
+        game();
         console.log(score)
     });
 })
@@ -95,21 +70,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#red").click(function () {
         score = red + score;
-        if (score === random) {
-            wins++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Congraulations");
-
-        }
-        else if (score > random) {
-            losses++;
-            score = 0;
-            ranNum();
-            crystals();
-            alert("Boo! Try again");
-        }
+        game();
         console.log(score)
     });
 })
