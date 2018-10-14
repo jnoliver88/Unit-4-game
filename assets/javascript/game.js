@@ -21,7 +21,7 @@ function game () {
         score = 0;
         ranNum();
         crystals();
-        alert("Congraulations");
+        alert("Congratulations");
 //if user input does not equal generated number alert prompts//
     }
     else if (score > random) {
@@ -79,7 +79,8 @@ $(document).ready(function () {
 
 //this writes the HTML file
 //Here I wanted to use .text .html to get the text to show on the site but it did not work//
-$("#wins").text(wins);
+var wins = $("#wins").html();
+
 
 
 
