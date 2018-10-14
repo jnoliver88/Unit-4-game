@@ -9,11 +9,12 @@ var losses = 0;
 var score = 0;
 //computer generates random number//
 function ranNum() {
-    random = Math.floor(Math.random() * (31) + 20);
+    random = Math.floor(Math.random() * (102) + 19);
     console.log(random)
 }
 ranNum();
 
+//if user input clicks equals to generated number alert prompts//
 function game () {
     if (score === random) {
         wins++;
@@ -21,7 +22,7 @@ function game () {
         ranNum();
         crystals();
         alert("Congraulations");
-
+//if user input does not equal generated number alert prompts//
     }
     else if (score > random) {
         losses++;
@@ -32,17 +33,18 @@ function game () {
     }
 }
 function crystals() {
-    blue = Math.floor((Math.random() * 10) + 1);
-    green = Math.floor((Math.random() * 10) + 1);
-    purple = Math.floor((Math.random() * 10) + 1);
-    red = Math.floor((Math.random() * 10) + 1);
+    blue = Math.floor((Math.random() * 12) + 1);
+    green = Math.floor((Math.random() * 12) + 1);
+    purple = Math.floor((Math.random() * 12) + 1);
+    red = Math.floor((Math.random() * 12) + 1);
     console.log(blue)
     console.log(green)
     console.log(purple)
     console.log(red)
 }
 crystals();
-//tracker user input//
+
+//tracker scores of the user input//
 $(document).ready(function () {
     $("#blue").click(function () {
         score = blue + score;
@@ -75,7 +77,13 @@ $(document).ready(function () {
     });
 })
 
+//this writes the HTML file
+//Here I wanted to use .text .html to get the text to show on the site but it did not work//
+$("#wins").text(wins);
 
+
+
+//THIS IS JUST PSEUDO CODE//
 //give crystal a set value(number) and once clicked on that crystal points go up to match the random number genrated//
 
 
